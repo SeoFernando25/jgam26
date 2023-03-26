@@ -16,13 +16,16 @@ scale = Vector2(0.317093, 0.317093)
 texture = ExtResource("2_0v58h")
 flip_h = true
 
-[node name="Enemy Spawn Slots" type="Node2D" parent="."]
+[node name="EnemySpawn" type="Node2D" parent="."]
 
-[node name="1" type="Node2D" parent="Enemy Spawn Slots"]
+[node name="1" type="Node2D" parent="EnemySpawn"]
 position = Vector2(535, 335)
 
-[node name="2" type="Node2D" parent="Enemy Spawn Slots"]
+[node name="2" type="Node2D" parent="EnemySpawn"]
 position = Vector2(634, 305)
 
-[node name="3" type="Node2D" parent="Enemy Spawn Slots"]
+[node name="3" type="Node2D" parent="EnemySpawn"]
 position = Vector2(709, 387)
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(154, 317)
