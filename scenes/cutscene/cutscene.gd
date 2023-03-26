@@ -1,58 +1,75 @@
 extends Node2D
 
+var skipFrame = false
 
+var currentFrame = 0
 @export var image: Array[Texture] = [];
 
-@onready var texture_rect = $CurrentSprite
+var tween_a = null
+var tween_b = null
+
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		swap_frame()
+		print("pressed")
+
+func swap_frame():
+	
+	if tween_a != null or tween_b != null:
+		tween_a.stop()
+		tween_b.stop()
+		print("Skipping")
+		$CurrentSprite.texture = image[currentFrame]
+		$CurrentSprite.modulate = Color.WHITE
+		$NextSprite.modulate = Color.TRANSPARENT
+		tween_a = null
+		tween_b = null
+		return
+		
+	currentFrame += 1
+
+	if currentFrame == image.size():
+		get_tree().change_scene_to_file("res://scenes/battle/battle.tscn")
+		return
+
+
+	$NextSprite.texture = image[currentFrame]
+	$NextSprite.modulate = Color.TRANSPARENT
+
+
+	tween_a = get_tree().create_tween()
+	tween_b = get_tree().create_tween()
+	var transitionTime = 1
+	tween_a.tween_property($NextSprite, "modulate", Color.WHITE, transitionTime)
+	tween_b.tween_property($CurrentSprite, "modulate", Color.TRANSPARENT, transitionTime)
+	await tween_a.finished
+	await tween_b.finished
+	tween_a = null
+	tween_b = null
+	$CurrentSprite.texture = $NextSprite.texture
+	$CurrentSprite.modulate = Color.WHITE
+	$NextSprite.modulate = Color.TRANSPARENT
+	print("finished", currentFrame)
+
+
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Get the modulate color of the CurrentSprite.
-	var tween = get_tree().create_tween()
-	
+	$CurrentSprite.modulate = Color.WHITE
 	$CurrentSprite.texture = image[0]
-	$CurrentSprite.modulate = Color.TRANSPARENT
 
-	# Fade in the first image.
-	tween.tween_property($CurrentSprite, "modulate", Color.WHITE, 1)
-	await tween.finished
-
-	# For each image
-	for i in range(image.size()):
-		# Set the texture to the current image.
-		$CurrentSprite.modulate = Color.WHITE
-		$CurrentSprite.texture = image[i]
-		if i < image.size() - 1:
-			$NextSprite.texture = image[i+1]
-		else:
-			$NextSprite.modulate = Color.TRANSPARENT
-
-
-		var tween_a = get_tree().create_tween()
-		var tween_b = get_tree().create_tween()
-		# Fade in the next image and fade out the current image.
-		tween_a.tween_property($NextSprite, "modulate", Color.WHITE, 1)
-		tween_b.tween_property($CurrentSprite, "modulate", Color.TRANSPARENT, 1)
-		await tween_b.finished
-		# Wait 2 seconds.
-		$CurrentSprite.modulate = Color.WHITE
-		$CurrentSprite.texture = $NextSprite.texture
-		# Set the next image.
-		if i < image.size() - 1:
-			$NextSprite.texture = image[i + 1]
-		else:
-			$NextSprite.texture = image[0]
-		tween = get_tree().create_tween()
-		tween.tween_property($NextSprite, "modulate", Color.TRANSPARENT, 1)
-		await tween.finished
+	$NextSprite.modulate = Color.WHITE
+	# 	else:
+	# 		$NextSprite.texture = image[0]
+	# 	tween = get_tree().create_tween()
+	# 	tween.tween_property($NextSprite, "modulate", Color.TRANSPARENT, 1)
 		
-	# Fade out the last image.
-	tween = get_tree().create_tween()
-	tween.tween_property($CurrentSprite, "modulate", Color.BLACK, 1)
-	tween.tween_property($CurrentSprite, "modulate", Color.BLACK, 1)
-	await tween.finished
-	get_tree().change_scene_to_file("res://scenes/battle/battle.tscn")
+	# # Fade out the last image.
+	# tween = get_tree().create_tween()
+	# tween.tween_property($CurrentSprite, "modulate", Color.BLACK, 1)
+	# tween.tween_property($CurrentSprite, "modulate", Color.BLACK, 1)
+	# get_tree().change_scene_to_file("res://scenes/battle/battle.tscn")
 	
 
 
