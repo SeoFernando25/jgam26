@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://on5cpwprcx6e"]
+[gd_scene load_steps=4 format=3 uid="uid://on5cpwprcx6e"]
 
 [ext_resource type="Theme" uid="uid://du5vwd6j3t4ur" path="res://ui/theme.tres" id="1_prfjh"]
+[ext_resource type="Script" path="res://prefabs/card.gd" id="2_4xjha"]
 [ext_resource type="Texture2D" uid="uid://bkdctf2jnjxi3" path="res://assets/sprites/placeholders/a.png" id="2_k2rrn"]
 
-[node name="Card" type="CenterContainer"]
+[node name="Card" type="CenterContainer" node_paths=PackedStringArray("labelNode")]
 theme = ExtResource("1_prfjh")
+script = ExtResource("2_4xjha")
+labelNode = NodePath("Panel/Label")
 
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(75, 125)

@@ -6,8 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://0qi7vykfyr27" path="res://assets/sprites/bluemosnter.png" id="3_khtf1"]
 [ext_resource type="PackedScene" uid="uid://on5cpwprcx6e" path="res://prefabs/card.tscn" id="4_bq67a"]
 
-[node name="battle" type="Node2D"]
+[node name="battle" type="Node2D" node_paths=PackedStringArray("playerSprite", "cardsNode")]
 script = ExtResource("1_2c7i4")
+playerSprite = NodePath("Player")
+cardPrefab = ExtResource("4_bq67a")
+cardsNode = NodePath("UI/HBoxContainer")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 1.0
@@ -22,7 +25,7 @@ scale = Vector2(0.317093, 0.317093)
 texture = ExtResource("2_0v58h")
 flip_h = true
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Player" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(181, 277)
 scale = Vector2(2.46855, 2.46855)
@@ -54,15 +57,3 @@ offset_left = 27.0
 offset_top = 451.0
 offset_right = 782.0
 offset_bottom = 582.0
-
-[node name="Card" parent="UI/HBoxContainer" instance=ExtResource("4_bq67a")]
-layout_mode = 2
-
-[node name="Card2" parent="UI/HBoxContainer" instance=ExtResource("4_bq67a")]
-layout_mode = 2
-
-[node name="Card3" parent="UI/HBoxContainer" instance=ExtResource("4_bq67a")]
-layout_mode = 2
-
-[node name="Card4" parent="UI/HBoxContainer" instance=ExtResource("4_bq67a")]
-layout_mode = 2
