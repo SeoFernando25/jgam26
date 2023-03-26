@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj1ei77eljpd6"]
+
+[ext_resource type="Texture2D" uid="uid://b40sua5pasyii" path="res://assets/sprites/background/bg2.png" id="1_xgwxo"]
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.115
+anchor_bottom = 0.135
+offset_right = -52.0
+offset_bottom = -41.0
+texture = ExtResource("1_xgwxo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -58.0
+offset_right = 115.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mute" type="CheckButton" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+text = "Mute"
+
+[node name="Label" type="Label" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+text = "Volume
+"
+
+[node name="VolumeSlider" type="HSlider" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Disabled" type="Button" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Send credit card information"
