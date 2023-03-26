@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bp2v48mvaslqw"]
+[gd_scene load_steps=6 format=3 uid="uid://bp2v48mvaslqw"]
 
+[ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_2c7i4"]
 [ext_resource type="Texture2D" uid="uid://b6norwbpdvk1k" path="res://assets/sprites/background/battle_bg.png" id="1_eh6wg"]
 [ext_resource type="Texture2D" uid="uid://d1srfyjd1ml13" path="res://assets/sprites/soldier.png" id="2_0v58h"]
 [ext_resource type="Texture2D" uid="uid://0qi7vykfyr27" path="res://assets/sprites/bluemosnter.png" id="3_khtf1"]
 [ext_resource type="PackedScene" uid="uid://on5cpwprcx6e" path="res://prefabs/card.tscn" id="4_bq67a"]
 
 [node name="battle" type="Node2D"]
+script = ExtResource("1_2c7i4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 1.0
