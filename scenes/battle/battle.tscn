@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://jesn7xm5l6i7"]
+[gd_scene load_steps=3 format=3 uid="uid://bp2v48mvaslqw"]
 
 [ext_resource type="Texture2D" uid="uid://b6norwbpdvk1k" path="res://assets/sprites/background/battle_bg.png" id="1_eh6wg"]
+[ext_resource type="Texture2D" uid="uid://d1srfyjd1ml13" path="res://assets/sprites/soldier.png" id="2_0v58h"]
 
 [node name="battle" type="Node2D"]
 
@@ -8,3 +9,20 @@
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_eh6wg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(684, 339)
+scale = Vector2(0.317093, 0.317093)
+texture = ExtResource("2_0v58h")
+flip_h = true
+
+[node name="Enemy Spawn Slots" type="Node2D" parent="."]
+
+[node name="1" type="Node2D" parent="Enemy Spawn Slots"]
+position = Vector2(535, 335)
+
+[node name="2" type="Node2D" parent="Enemy Spawn Slots"]
+position = Vector2(634, 305)
+
+[node name="3" type="Node2D" parent="Enemy Spawn Slots"]
+position = Vector2(709, 387)
