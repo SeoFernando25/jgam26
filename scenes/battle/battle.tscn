@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2huo127t82dx"]
+[gd_scene load_steps=2 format=3 uid="uid://jesn7xm5l6i7"]
 
-[ext_resource type="Texture2D" uid="uid://b6norwbpdvk1k" path="res://assets/sprites/background/background_luta.png" id="1_5hwgg"]
+[ext_resource type="Texture2D" uid="uid://b6norwbpdvk1k" path="res://assets/sprites/background/battle_bg.png" id="1_eh6wg"]
 
 [node name="battle" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_5hwgg")
+texture = ExtResource("1_eh6wg")
