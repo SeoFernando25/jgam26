@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bp2v48mvaslqw"]
+[gd_scene load_steps=4 format=3 uid="uid://bp2v48mvaslqw"]
 
 [ext_resource type="Texture2D" uid="uid://b6norwbpdvk1k" path="res://assets/sprites/background/battle_bg.png" id="1_eh6wg"]
 [ext_resource type="Texture2D" uid="uid://d1srfyjd1ml13" path="res://assets/sprites/soldier.png" id="2_0v58h"]
+[ext_resource type="Texture2D" uid="uid://0qi7vykfyr27" path="res://assets/sprites/bluemosnter.png" id="3_khtf1"]
 
 [node name="battle" type="Node2D"]
 
@@ -17,6 +18,12 @@ position = Vector2(684, 339)
 scale = Vector2(0.317093, 0.317093)
 texture = ExtResource("2_0v58h")
 flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(181, 277)
+scale = Vector2(2.46855, 2.46855)
+texture = ExtResource("3_khtf1")
 
 [node name="EnemySpawn" type="Node2D" parent="."]
 
@@ -45,10 +52,11 @@ offset_top = 451.0
 offset_right = 782.0
 offset_bottom = 582.0
 
-[node name="CenterContainer" type="CenterContainer" parent="UI/HBoxContainer"]
+[node name="Card" type="CenterContainer" parent="UI/HBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="UI/HBoxContainer/CenterContainer"]
+[node name="Panel" type="Panel" parent="UI/HBoxContainer/Card"]
+self_modulate = Color(1, 0, 0, 1)
 custom_minimum_size = Vector2(75, 125)
 layout_mode = 2
 
@@ -56,6 +64,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Panel" type="Panel" parent="UI/HBoxContainer/CenterContainer2"]
+modulate = Color(0, 1, 1, 1)
 custom_minimum_size = Vector2(75, 125)
 layout_mode = 2
 
@@ -63,6 +72,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Panel" type="Panel" parent="UI/HBoxContainer/CenterContainer3"]
+modulate = Color(1, 1, 0, 1)
 custom_minimum_size = Vector2(75, 125)
 layout_mode = 2
 
@@ -70,5 +80,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Panel" type="Panel" parent="UI/HBoxContainer/CenterContainer4"]
+modulate = Color(0, 1, 0, 1)
 custom_minimum_size = Vector2(75, 125)
 layout_mode = 2
