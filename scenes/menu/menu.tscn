@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://e4v3rbjny2t5"]
+[gd_scene load_steps=4 format=3 uid="uid://e4v3rbjny2t5"]
 
 [ext_resource type="Theme" uid="uid://du5vwd6j3t4ur" path="res://ui/theme.tres" id="1_5ivhb"]
+[ext_resource type="Texture2D" uid="uid://ded1df4if4ofg" path="res://assets/sprites/background/bg.png" id="2_je6ml"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8cgcx"]
 font_size = 64
+shadow_size = 20
+shadow_color = Color(0.862745, 0.298039, 0.25098, 1)
+shadow_offset = Vector2(0, 0)
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -14,10 +18,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_5ivhb")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("2_je6ml")
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
+offset_top = 60.0
 offset_right = 800.0
-offset_bottom = 242.0
+offset_bottom = 302.0
 text = "Main Title"
 label_settings = SubResource("LabelSettings_8cgcx")
 horizontal_alignment = 1
@@ -25,9 +36,10 @@ vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 218.0
-offset_right = 582.0
-offset_bottom = 600.0
+offset_left = 231.0
+offset_top = 257.0
+offset_right = 595.0
+offset_bottom = 479.0
 alignment = 1
 
 [node name="New Game" type="Button" parent="VBoxContainer"]
