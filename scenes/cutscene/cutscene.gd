@@ -11,7 +11,6 @@ var tween_b = null
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		swap_frame()
-		print("pressed")
 
 func swap_frame():
 	
@@ -39,7 +38,7 @@ func swap_frame():
 
 	tween_a = get_tree().create_tween()
 	tween_b = get_tree().create_tween()
-	var transitionTime = 1
+	var transitionTime = 0.25
 	tween_a.tween_property($NextSprite, "modulate", Color.WHITE, transitionTime)
 	tween_b.tween_property($CurrentSprite, "modulate", Color.TRANSPARENT, transitionTime)
 	await tween_a.finished
@@ -51,25 +50,11 @@ func swap_frame():
 	$NextSprite.modulate = Color.TRANSPARENT
 	print("finished", currentFrame)
 
-
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$CurrentSprite.modulate = Color.WHITE
 	$CurrentSprite.texture = image[0]
 
 	$NextSprite.modulate = Color.WHITE
-	# 	else:
-	# 		$NextSprite.texture = image[0]
-	# 	tween = get_tree().create_tween()
-	# 	tween.tween_property($NextSprite, "modulate", Color.TRANSPARENT, 1)
-		
-	# # Fade out the last image.
-	# tween = get_tree().create_tween()
-	# tween.tween_property($CurrentSprite, "modulate", Color.BLACK, 1)
-	# tween.tween_property($CurrentSprite, "modulate", Color.BLACK, 1)
-	# get_tree().change_scene_to_file("res://scenes/battle/battle.tscn")
 	
 
 
