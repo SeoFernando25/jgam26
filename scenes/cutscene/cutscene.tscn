@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scenes/cutscene/cutscene.gd" id="1_6fk4x"]
 [ext_resource type="Texture2D" uid="uid://bkdctf2jnjxi3" path="res://assets/sprites/placeholders/a.png" id="2_5jc0o"]
+[ext_resource type="Texture2D" uid="uid://b40sua5pasyii" path="res://assets/sprites/background/bg2.png" id="2_at8r3"]
 [ext_resource type="Texture2D" uid="uid://c2fdk24ck2vng" path="res://assets/sprites/placeholders/b.png" id="3_3dn2b"]
-[ext_resource type="Texture2D" uid="uid://cx24tn0xrw6u2" path="res://assets/sprites/placeholders/c.png" id="4_6swqj"]
-[ext_resource type="Texture2D" uid="uid://dl2nyqkgn8cq2" path="res://assets/sprites/placeholders/d.png" id="5_6apla"]
+[ext_resource type="Texture2D" uid="uid://ded1df4if4ofg" path="res://assets/sprites/background/bg.png" id="3_55qs6"]
 
 [node name="cutscene" type="Node2D"]
 script = ExtResource("1_6fk4x")
-image = Array[Texture]([ExtResource("2_5jc0o"), ExtResource("3_3dn2b"), ExtResource("4_6swqj"), ExtResource("5_6apla")])
+image = Array[Texture]([ExtResource("2_at8r3"), ExtResource("3_55qs6")])
 
 [node name="NextSprite" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
