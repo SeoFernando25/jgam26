@@ -6,8 +6,10 @@
 [node name="battle" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 801.0
+offset_bottom = 598.0
 texture = ExtResource("1_eh6wg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -29,3 +31,44 @@ position = Vector2(709, 387)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
 position = Vector2(154, 317)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 451.0
+offset_right = 782.0
+offset_bottom = 582.0
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="UI/HBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(75, 125)
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="UI/HBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(75, 125)
+layout_mode = 2
+
+[node name="CenterContainer3" type="CenterContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="UI/HBoxContainer/CenterContainer3"]
+custom_minimum_size = Vector2(75, 125)
+layout_mode = 2
+
+[node name="CenterContainer4" type="CenterContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="UI/HBoxContainer/CenterContainer4"]
+custom_minimum_size = Vector2(75, 125)
+layout_mode = 2
