@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp2v48mvaslqw"]
+
+[ext_resource type="Texture2D" uid="uid://b6norwbpdvk1k" path="res://assets/sprites/background/battle_bg.png" id="1_eh6wg"]
+[ext_resource type="Texture2D" uid="uid://d1srfyjd1ml13" path="res://assets/sprites/soldier.png" id="2_0v58h"]
+
+[node name="battle" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 801.0
+offset_bottom = 598.0
+texture = ExtResource("1_eh6wg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(684, 339)
+scale = Vector2(0.317093, 0.317093)
+texture = ExtResource("2_0v58h")
+flip_h = true
+
+[node name="EnemySpawn" type="Node2D" parent="."]
+
+[node name="1" type="Node2D" parent="EnemySpawn"]
+position = Vector2(535, 335)
+
+[node name="2" type="Node2D" parent="EnemySpawn"]
+position = Vector2(634, 305)
+
+[node name="3" type="Node2D" parent="EnemySpawn"]
+position = Vector2(709, 387)
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(154, 317)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 451.0
+offset_right = 782.0
+offset_bottom = 582.0
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="UI/HBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(75, 125)
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="UI/HBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(75, 125)
+layout_mode = 2
+
+[node name="CenterContainer3" type="CenterContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="UI/HBoxContainer/CenterContainer3"]
+custom_minimum_size = Vector2(75, 125)
+layout_mode = 2
+
+[node name="CenterContainer4" type="CenterContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="UI/HBoxContainer/CenterContainer4"]
+custom_minimum_size = Vector2(75, 125)
+layout_mode = 2
