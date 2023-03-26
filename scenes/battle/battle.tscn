@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp2v48mvaslqw"]
+[gd_scene load_steps=5 format=3 uid="uid://bp2v48mvaslqw"]
 
 [ext_resource type="Texture2D" uid="uid://b6norwbpdvk1k" path="res://assets/sprites/background/battle_bg.png" id="1_eh6wg"]
 [ext_resource type="Texture2D" uid="uid://d1srfyjd1ml13" path="res://assets/sprites/soldier.png" id="2_0v58h"]
 [ext_resource type="Texture2D" uid="uid://0qi7vykfyr27" path="res://assets/sprites/bluemosnter.png" id="3_khtf1"]
+[ext_resource type="PackedScene" uid="uid://on5cpwprcx6e" path="res://prefabs/card.tscn" id="4_bq67a"]
 
 [node name="battle" type="Node2D"]
 
@@ -52,34 +53,14 @@ offset_top = 451.0
 offset_right = 782.0
 offset_bottom = 582.0
 
-[node name="Card" type="CenterContainer" parent="UI/HBoxContainer"]
+[node name="Card" parent="UI/HBoxContainer" instance=ExtResource("4_bq67a")]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="UI/HBoxContainer/Card"]
-self_modulate = Color(1, 0, 0, 1)
-custom_minimum_size = Vector2(75, 125)
+[node name="Card2" parent="UI/HBoxContainer" instance=ExtResource("4_bq67a")]
 layout_mode = 2
 
-[node name="CenterContainer2" type="CenterContainer" parent="UI/HBoxContainer"]
+[node name="Card3" parent="UI/HBoxContainer" instance=ExtResource("4_bq67a")]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="UI/HBoxContainer/CenterContainer2"]
-modulate = Color(0, 1, 1, 1)
-custom_minimum_size = Vector2(75, 125)
-layout_mode = 2
-
-[node name="CenterContainer3" type="CenterContainer" parent="UI/HBoxContainer"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="UI/HBoxContainer/CenterContainer3"]
-modulate = Color(1, 1, 0, 1)
-custom_minimum_size = Vector2(75, 125)
-layout_mode = 2
-
-[node name="CenterContainer4" type="CenterContainer" parent="UI/HBoxContainer"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="UI/HBoxContainer/CenterContainer4"]
-modulate = Color(0, 1, 0, 1)
-custom_minimum_size = Vector2(75, 125)
+[node name="Card4" parent="UI/HBoxContainer" instance=ExtResource("4_bq67a")]
 layout_mode = 2

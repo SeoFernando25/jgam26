@@ -1,5 +1,8 @@
-[gd_resource type="Theme" format=3 uid="uid://du5vwd6j3t4ur"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://du5vwd6j3t4ur"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwbeq"]
 
 [resource]
 Button/font_sizes/font_size = 16
+Panel/styles/panel = SubResource("StyleBoxFlat_gwbeq")
 VBoxContainer/constants/separation = 16
