@@ -46,5 +46,13 @@ func _ready():
 		tween = get_tree().create_tween()
 		tween.tween_property($NextSprite, "modulate", Color.TRANSPARENT, 1)
 		await tween.finished
+		
+	# Fade out the last image.
+	tween = get_tree().create_tween()
+	tween.tween_property($CurrentSprite, "modulate", Color.BLACK, 1)
+	tween.tween_property($CurrentSprite, "modulate", Color.BLACK, 1)
+	await tween.finished
+	get_tree().change_scene_to_file("res://scenes/battle/battle.tscn")
 	
+
 

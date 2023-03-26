@@ -12,6 +12,8 @@ playerSprite = NodePath("Player")
 cardPrefab = ExtResource("4_bq67a")
 cardsNode = NodePath("UI/HBoxContainer")
 
+[node name="Timer" type="Timer" parent="."]
+
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 1.0
 offset_top = -2.0
@@ -27,7 +29,7 @@ flip_h = true
 
 [node name="Player" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(181, 277)
+position = Vector2(198, 281)
 scale = Vector2(2.46855, 2.46855)
 texture = ExtResource("3_khtf1")
 

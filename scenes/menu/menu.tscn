@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://e4v3rbjny2t5"]
+[gd_scene load_steps=7 format=3 uid="uid://e4v3rbjny2t5"]
 
 [ext_resource type="Theme" uid="uid://du5vwd6j3t4ur" path="res://ui/theme.tres" id="1_5ivhb"]
 [ext_resource type="Texture2D" uid="uid://ded1df4if4ofg" path="res://assets/sprites/background/bg.png" id="2_je6ml"]
 [ext_resource type="Script" path="res://scenes/menu/Exit.gd" id="3_mkahl"]
+[ext_resource type="Script" path="res://scenes/menu/newgame.gd" id="3_u2fcd"]
+[ext_resource type="Script" path="res://scenes/menu/Settings.gd" id="3_vhse8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8cgcx"]
 font_size = 64
@@ -47,10 +49,12 @@ alignment = 1
 [node name="New Game" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "New Game"
+script = ExtResource("3_u2fcd")
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Settings"
+script = ExtResource("3_vhse8")
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
